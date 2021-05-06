@@ -3,8 +3,12 @@ import {getCustomRepository} from 'typeorm';
 import {Router} from 'express';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 import CreateAppointmentService from '../services/CreateAppointmentService';
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+
 
 const appointmentsRouter = Router();
+
+appointmentsRouter.use(ensureAuthenticated)
 
 appointmentsRouter.get('/', async (request, response) => {
 
