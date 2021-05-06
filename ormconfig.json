@@ -4,6 +4,7 @@
   "port": "5433",
   "username": "postgres",
   "database": "postgres",
+  "entities": ["./src/models/*.ts"],
   "migrations": ["./src/database/migrations/*.ts "],
   "cli": {
     "migrationsDir": "./src/database/migrations"
