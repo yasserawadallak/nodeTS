@@ -4,7 +4,7 @@ import { compare } from 'bcryptjs';
 import usersRouter from '../routes/users.routes';
 import {sign, verify} from 'jsonwebtoken'
 import authConfig from '../config/auth';
-import AppError from '../errors/AppErrors'
+import AppError from '../errors/AppError'
 
 interface Request {
   email: string,

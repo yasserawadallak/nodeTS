@@ -1,12 +1,11 @@
 import {Router} from 'express';
 import AuthenticateUserSerivce from '../services/AuthenticaUserService';
 
-  
+
 const sessionsRouter = Router();
 
 
 sessionsRouter.post('/', async (request, response) => {
-  try{
 
     const {email, password} = request.body;
 
@@ -17,9 +16,7 @@ sessionsRouter.post('/', async (request, response) => {
     delete user.password;
 
     return response.json({token})
-  } catch (err){
-    response.status(404).json({"error": err.message});
-  }
+
 })
 
 export default sessionsRouter;
